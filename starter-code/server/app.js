@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express            = require('express');
 const path               = require('path');
 const favicon            = require('serve-favicon');
@@ -13,7 +14,14 @@ const MongoStore         = require('connect-mongo')(session);
 const mongoose           = require('mongoose');
 const flash              = require('connect-flash');
 
-mongoose.connect('mongodb://localhost:27017/tumblr-lab-development');
+mongoose.connect('mongodb://localhost:27017/tumblr-lab-development',{useNewUrlParser: true,useUnifiedTopology: true })
+ .then(x => {
+  console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+})
+.catch(err => {
+  console.error('Error connecting to mongo', err)
+});
+
 
 const app = express();
 

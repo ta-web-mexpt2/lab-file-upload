@@ -19,90 +19,6 @@ Navigate to your repo and create a Pull Request -from your master branch to the 
 
 In the Pull request name, add your name and last names separated by a dash "-".
 
-Include a link to your deployed heroku app in the pull request.![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
-2
-# Express File Uploads | IronTumblr
-3
-​
-4
-## Requirements
-5
-​
-6
-- [Fork this repo](https://guides.github.com/activities/forking/)
-7
-- Clone this repo into your `~/code/labs`
-8
-​
-9
-## Submission
-10
-​
-11
-Upon completion, run the following commands
-12
-​
-13
-```![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
-2
-# Express File Uploads | IronTumblr
-3
-​
-4
-## Requirements
-5
-​
-6
-- [Fork this repo](https://guides.github.com/activities/forking/)
-7
-- Clone this repo into your `~/code/labs`
-8
-​
-9
-## Submission
-10
-​
-11
-Upon completion, run the following commands
-12
-​
-13
-```
-14
-$ git add .
-15
-$ git commit -m "done"
-16
-$ git push origin master
-17
-```
-18
-Navigate to your repo and create a Pull Request -from your master branch to the original repository master branch.
-19
-​
-20
-In the Pull request name, add your name and last names separated by a dash "-".
-21
-​
-22
-Include a link to your deployed heroku app in the pull request.
-14
-$ git add .
-15
-$ git commit -m "done"
-16
-$ git push origin master
-17
-```
-18
-Navigate to your repo and create a Pull Request -from your master branch to the original repository master branch.
-19
-​
-20
-In the Pull request name, add your name and last names separated by a dash "-".
-21
-​
-22
 Include a link to your deployed heroku app in the pull request.
 
 ## Deliverables
@@ -161,6 +77,17 @@ The model should have the following attributes:
 - `imageName`
 
 You should create routes to create new comments. Comments should be displayed on the Post *show* page.
+
+### Recomendations :construct:
+- Remember this lab should go with his frontend on react (folder already included ) 
+
+- You don't have to create super styled frontend we only verify your skill at the time of realizing frontend and back conections.
+
+
+- Remember to use postman or insomnia to check all your endpoints! 
+
+
+- GoodLuck :skull:  
 
 ### Iteration 4 | Deploy!
 
