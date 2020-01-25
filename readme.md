@@ -78,7 +78,7 @@ The model should have the following attributes:
 
 You should create routes to create new comments. Comments should be displayed on the Post *show* page.
 
-### Recomendations :construct:
+### Recomendations :construction:
 - Remember this lab should go with his frontend on react (folder already included ) 
 
 - You don't have to create super styled frontend we only verify your skill at the time of realizing frontend and back conections.
