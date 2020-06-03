@@ -39,7 +39,7 @@ Complete all of the non-bonus iterations. No styling is required, but is suggest
 > A social media site to which a user makes short, frequent posts.
 
 This is easier shown than described, so check out [this tumblr](http://bestdogmemes.tumblr.com/) filled with funny dog memes.
-
+## Part 1
 ### Iteration 1 | User Profile Pictures
 
 In the starter code, we've already provided a User model and the authentication logic. Unfortunately, the user doesn't have a profile picture.
@@ -62,6 +62,8 @@ For this iteration you must create the **model**, along with the **new**, **crea
 A user should be logged in to create a post, but *not* to view.
 
 The **index** will be the home page, and simply display all of the posts on the website.
+
+## Part 2
 
 ### Iteration 3 | Comments
 
