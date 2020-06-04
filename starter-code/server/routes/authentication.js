@@ -1,8 +1,9 @@
 const express    = require('express');
 const passport   = require('passport');
 const router     = express.Router();
+const User = require('../models/User');
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
-// remember to require the User model
+
 // check this http status codes https://www.restapitutorial.com/httpstatuscodes.html
 router.get('/login', ensureLoggedOut(), (req, res) => {
     res.status(307).json({ message:'not loggedOut'});// you can change this 
@@ -15,7 +16,12 @@ router.post('/login', ensureLoggedOut(), passport.authenticate('local-login', {
 }));
 
 router.get('/signup', ensureLoggedOut(), (req, res) => {
-    res.status(401).json({ message:'error  Unauthorized'}); //you can change this
+    // res.status(401).json({ message:'error  Unauthorized'}); //you can change this
+    User.create(user)
+    .then(() => {
+      res.status(201).json({ msg: "User successfully created" });
+    })
+    .catch((err) => res.status(400).json(err));
 });
 
 router.post('/signup', ensureLoggedOut(), passport.authenticate('local-signup', {
