@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express            = require('express');
 const path               = require('path');
 const favicon            = require('serve-favicon');
@@ -106,7 +107,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const index = require('./routes/index');
 const authRoutes = require('./routes/authentication');
-app.use('/', index);
+app.use('/posts', index);
 app.use('/', authRoutes);
 
 // catch 404 and forward to error handler

@@ -3,6 +3,8 @@ const passport   = require('passport');
 const router     = express.Router();
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 // remember to require the User model
+const User = require('../models/User');
+
 // check this http status codes https://www.restapitutorial.com/httpstatuscodes.html
 router.get('/login', ensureLoggedOut(), (req, res) => {
     res.status(307).json({ message:'not loggedOut'});// you can change this 
