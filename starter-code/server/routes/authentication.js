@@ -2,6 +2,8 @@ const express    = require('express');
 const passport   = require('passport');
 const router     = express.Router();
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+
+
 // remember to require the User model
 // check this http status codes https://www.restapitutorial.com/httpstatuscodes.html
 router.get('/login', ensureLoggedOut(), (req, res) => {
