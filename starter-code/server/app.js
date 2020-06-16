@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express            = require('express');
 const path               = require('path');
 const favicon            = require('serve-favicon');
@@ -14,17 +15,13 @@ const MongoStore         = require('connect-mongo')(session);
 const mongoose           = require('mongoose');
 const flash              = require('connect-flash');
 
-mongoose.connect('mongodb://localhost:27017/tumblr-lab-development',{useNewUrlParser: true,useUnifiedTopology: true })
- .then(x => {
-  console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-})
-.catch(err => {
-  console.error('Error connecting to mongo', err)
-});
-
+mongoose.connect(process.env.DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true })
+ .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
+ .catch(err => {console.error('Error connecting to mongo', err)});
 
 const app = express();
-
 
 app.use(session({
   secret: 'tumblrlabdev',
@@ -77,12 +74,14 @@ passport.use('local-signup', new LocalStrategy(
                 const {
                   username,
                   email,
-                  password
+                  password,
+                  image
                 } = req.body;
                 const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                 const newUser = new User({
                   username,
                   email,
+                  image,
                   password: hashPass
                 });
 
@@ -123,8 +122,9 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+   res.status(err.status || 500);
+   res.render('error');
 });
+
 
 module.exports = app;
